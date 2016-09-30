@@ -21,6 +21,7 @@ RUN apt-get update \
 		wget \
 		ca-certificates \
 		libcurl4-openssl-dev \
+		libssl-dev \
   && add-apt-repository --enable-source --yes "ppa:marutter/rrutter" \
 	&& add-apt-repository --enable-source --yes "ppa:marutter/c2d4u"
 
