@@ -13,3 +13,9 @@ script:
   - docker run -d --name rbayesian drmike/r-bayesian
   - sleep 5 && docker ps | grep rbayesian
   - docker rm -f $(docker ps -a -q)
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push drmike/r-bayesian;
+    fi
