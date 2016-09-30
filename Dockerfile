@@ -53,9 +53,7 @@ RUN apt-get update \
  	&& rm -rf /var/lib/apt/lists/*
 
 ## Install the rstan packages (and some close friends).
-RUN install2.r --error \
-    rstan \
-    shinystan
+RUN install2.r --error rstan
 
 ## Install macroeconomics
 RUN install2.r --error \
