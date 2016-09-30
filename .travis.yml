@@ -5,7 +5,7 @@ services:
 
 ## Make sure all containers build without error.
 before_install:
-  - docker build -t drmike/r-bayesian r-bayesian
+  - docker build -t drmike/r-bayesian .
 
 ## A few simple / crude tests
 script:
