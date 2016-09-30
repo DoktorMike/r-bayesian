@@ -1,4 +1,4 @@
-FROM rocker/r-apt
+FROM rocker/r-apt/xenial
 MAINTAINER "Michael Green" micke.green@gmail.com
 
 ## Install the rstan packages (and some close friends).
