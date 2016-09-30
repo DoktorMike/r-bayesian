@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+## Make sure all containers build without error.
+before_install:
+  - docker build -t drmike/r-bayesian r-bayesian
+
+## A few simple / crude tests
+script:
+  - docker run -ti drmike/r-bayesian R --version
+  - docker run -d --name rbayesian drmike/r-bayesian
+  - sleep 5 && docker ps | grep rbayesian
+  - docker rm -f $(docker ps -a -q)
