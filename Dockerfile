@@ -3,6 +3,8 @@ FROM ubuntu:xenial
 ## This handle reaches Mike
 MAINTAINER "Michael Green" micke.green@gmail.com
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 ## Set a default user. Available via runtime flag `--user docker`
 ## Add user to 'staff' group, granting them write privileges to /usr/local/lib/R/site.library
 ## User should also have & own a home directory (for rstudio or linked volumes to work properly).
