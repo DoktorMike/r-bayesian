@@ -58,5 +58,8 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 8004
 
+# Install a sample prediction API: stupidweather
+RUN Rscript -e 'devtools::install_github("DoktorMike/stupidweather")'
+
 # Define default command.
 CMD service opencpu restart && tail -F /var/log/opencpu/apache_access.log
