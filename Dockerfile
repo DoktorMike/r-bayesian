@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:14.04
 
 ## This handle reaches Mike
 MAINTAINER "Michael Green" micke.green@gmail.com
