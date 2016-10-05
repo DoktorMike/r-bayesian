@@ -1,6 +1,14 @@
 # R Bayesian
 This is the R Bayesian Data Science Toolkit for deployment purposes.
 
+## Docker image
+
+[![](https://images.microbadger.com/badges/image/drmike/r-bayesian.svg)](https://microbadger.com/images/drmike/r-bayesian "Get your own image badge on microbadger.com")
+
+[![](https://images.microbadger.com/badges/version/drmike/r-bayesian.svg)](https://microbadger.com/images/drmike/r-bayesian "Get your own version badge on microbadger.com")
+
+## Build
+
 [![Build Status](https://travis-ci.org/DoktorMike/r-bayesian.svg?branch=master)](https://travis-ci.org/DoktorMike/r-bayesian)
 
 ## Quick start
