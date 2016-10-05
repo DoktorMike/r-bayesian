@@ -24,12 +24,44 @@ You can also make sure that you run the OpenCPU server inside the docker and tes
 
 ```bash
 docker run -d -p 80:80 -p 443:443 -p 8004:8004 drmike/r-bayesian
-curl http://127.17.0.2/ocpu/library/stupidweather/R/predictweather/json -Method Post
+curl http://localhost:8004/ocpu/library/stupidweather/R/predictweather/json -H "Content-Type: application/json" -d '{"n":6}'
 ```
 
-Be sure to replace the ip number with the ip number you received when you started the docker container. On linux systems this can be referred to as localhost. On windows it will be a specific IP like in the example above.
+which on windows most likely have to be:
 
-If you want to play around with the interface you can open up your browser and surf to http://127.17.0.2/ocpu/test/ where again the IP number has to be updated to your specific IP that you got when starting the docker.
+```bash
+curl http://localhost/ocpu/library/stupidweather/R/predictweather/json -Method Post
+```
+
+since curl is slightly different there.
+
+Be sure to replace the ip number with the ip number you received when you started the docker container. On linux systems this can be referred to as localhost. On windows it will be a specific IP. On Windows 10 I think localhost also works.
+
+If you want to play around with the interface you can open up your browser and surf to http://localhost/ocpu/test/ where again the IP number has to be updated to your specific IP that you got when starting the docker.
+
+## Worked examples
+
+This code represents two ways of getting the weather prediction for the next 6 days.
+
+```bash
+# Posting parameters as JSON
+curl http://localhost:8004/ocpu/library/stupidweather/R/predictweather/json -H "Content-Type: application/json" -d '{"n":6}'
+
+# Same thing using post and afterwards get. Remember to replace the id with the output you get
+curl http://localhost:8004/ocpu/library/stupidweather/R/predictweather -d 'n=6'
+curl http://localhost:8004/ocpu/tmp/x036827416d/stdout/text
+```
+
+We can also upload data and look at the summaries:
+
+```bash
+# Upload local file mydata.csv
+curl http://localhost:8004/ocpu/library/utils/R/read.csv -F "file=@mydata.csv"
+
+# Replace session id with returned one above
+curl http://localhost:8004/ocpu/tmp/x067b4172/R/.val/print
+curl http://localhost:8004/ocpu/library/base/R/summary -d "object=x067b4172"
+```
 
 ## About this container
 
