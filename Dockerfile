@@ -28,7 +28,7 @@ ENV LANG en_US.UTF-8
 # Note 1: we need wget here as the build env is too old to work with libcurl (we think, precise was)
 # Note 2: r-cran-docopt is not currently in c2d4u so we install from source
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    littler r-base r-base-dev r-recommended r-cran-stringr r-cran-rcpp \
+    littler r-base r-base-dev r-recommended r-cran-stringr r-cran-rcpp r-cran-rstan \
 	&& echo 'options(repos = c(CRAN = "https://cran.rstudio.com/"), download.file.method = "libcurl")' >> /etc/R/Rprofile.site \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r \
 	&& ln -s /usr/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r \
@@ -39,7 +39,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 ## Install the rstan packages (and some close friends).
-RUN install2.r --error rstan
+#RUN install2.r --error rstan
 
 ## Install macroeconomics
 RUN install2.r --error Quandl
