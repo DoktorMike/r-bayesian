@@ -7,7 +7,7 @@ This is the R Bayesian Data Science Toolkit for deployment purposes.
 
 ## Build
 
-[![Build Status](https://travis-ci.org/DoktorMike/r-bayesian.svg?branch=master)](https://travis-ci.org/DoktorMike/r-bayesian)
+[![Build Status](https://travis-ci.org/DoktorMike/r-bayesian.svg?branch=master)](https://travis-ci.org/DoktorMike/r-bayesian) [![Coverage Status](https://coveralls.io/repos/github/DoktorMike/r-bayesian/badge.svg?branch=master)](https://coveralls.io/github/DoktorMike/r-bayesian?branch=master)
 
 ## Quick start
 
